@@ -7,7 +7,7 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    environment: dev
+    environment: qa
     steps:
       - name: deploy
         run: echo "should be deployed"
