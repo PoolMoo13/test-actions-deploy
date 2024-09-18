@@ -8,15 +8,14 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     environment: qa
+    
     steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
       - name: deploy
         run:  |
           echo "should be deployed"
-          echo "git ref"
-          echo $GITHUB_REF
-          echo "git head ref"
-          echo $GITHUB_HEAD_REF
-          echo "git base ref"
-          echo $GITHUB_BASE_REF
-          echo "git ref name"
-          echo $GITHUB_REF_NAME
+          echo "event pull_request"
+          echo ${{ github.event.pull_request.base.ref }}
