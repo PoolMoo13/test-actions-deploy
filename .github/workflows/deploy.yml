@@ -10,5 +10,8 @@ jobs:
     environment: qa
     steps:
       - name: deploy
-        run: echo "should be deployed"
-    
+        run:  |
+          echo "should be deployed"
+          echo $GITHUB_REF
+          echo $GITHUB_HEAD_REF
+          echo $GITHUB_REF_NAME
