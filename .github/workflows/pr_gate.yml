@@ -1,0 +1,12 @@
+name: Pull Request Gate
+on:
+  pull_request
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
