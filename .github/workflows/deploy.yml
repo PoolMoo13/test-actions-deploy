@@ -12,6 +12,9 @@ jobs:
       - name: deploy
         run:  |
           echo "should be deployed"
+          echo "git ref"
           echo $GITHUB_REF
+          echo "git head ref"
           echo $GITHUB_HEAD_REF
+          echo "git ref name"
           echo $GITHUB_REF_NAME
